@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 def app():
     st.title("📊 Resultados recientes de un equipo")
 
-    api_key = st.secrets["api_key"]
+    api_key = st.secrets["api"]["api_key"]
 
     ligas = {
         "🇬🇧 Premier League": 39,
