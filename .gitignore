@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+.env.*
+
+# Archivos de usuario
+.DS_Store
+*.swp
+*.swo
+
+.streamlit/
