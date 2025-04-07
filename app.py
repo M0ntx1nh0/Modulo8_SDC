@@ -26,7 +26,7 @@ if st.session_state.get("authenticated", False):
             st.session_state.username = None
             st.session_state["authenticated"] = False
             st.session_state["usuario"] = None
-            st.experimental_rerun()  # Esto forzará una recarga de la página
+            st.stop()  # Esto forzará una recarga de la página
 
     # --- Carga de páginas según la selección ---
     if page == "Estadísticas Jugadores":
