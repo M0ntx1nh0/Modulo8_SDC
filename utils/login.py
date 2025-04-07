@@ -87,5 +87,6 @@ def logout():
     # Limpiar completamente las claves de session_state
     st.session_state.clear()  # Limpiar todos los valores guardados en la sesión
 
-    # Detener y permitir la recarga de la página
+    # Detener y permitir la recarga de la página sin usar rerun
+    st.experimental_set_query_params()  # Limpiar los parámetros de la URL
     st.stop()

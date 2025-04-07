@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.login import generarLogin
+from utils.login import generarLogin, logout
 
 # Mostrar login y detener si no está autenticado
 generarLogin()
@@ -19,14 +19,11 @@ if st.session_state.get("authenticated", False):
         # Menú de navegación para las páginas
         page = st.radio("Selecciona una sección:", ["Estadísticas Jugadores", "Info Equipos API"])
 
-        # Opción para cerrar sesión
+ # Opción para cerrar sesión
         st.markdown("---")
         if st.button("🔓 Cerrar sesión"):
-            st.session_state.authenticated = False
-            st.session_state.username = None
-            st.session_state["authenticated"] = False
-            st.session_state["usuario"] = None
-            st.stop()  # Esto forzará una recarga de la página
+            logout()  # Llamada al logout cuando se presiona el botón
+
 
     # --- Carga de páginas según la selección ---
     if page == "Estadísticas Jugadores":
