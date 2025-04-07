@@ -80,8 +80,12 @@ def generarLogin():
         st.write(f"Usuario autenticado: {st.session_state['usuario']}")
 
 def logout():
+    # Eliminar las cookies y limpiar el estado de sesión
     cookie_manager.delete('authenticated', key='delete_auth')
     cookie_manager.delete('usuario', key='delete_user')
-    st.session_state['authenticated'] = False
-    st.session_state['usuario'] = None
-    st.stop()  # Detener y permitir la recarga de la página sin usar rerun
+
+    # Limpiar completamente las claves de session_state
+    st.session_state.clear()  # Limpiar todos los valores guardados en la sesión
+
+    # Detener y permitir la recarga de la página
+    st.stop()

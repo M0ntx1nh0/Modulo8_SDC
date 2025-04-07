@@ -11,5 +11,5 @@ __pycache__/
 *.swp
 *.swo
 
-.streamlit/secrets
+.streamlit/secrets.toml
 
